@@ -6,6 +6,7 @@
           <v-layout column align-center>
             <h1 style="font-size: 10vh">"{{sentence}}"
               <v-btn @click="backspace">Backspace</v-btn>
+              <v-btn @click="clear">Clear All</v-btn>
             </h1>
             <v-carousel style="height: 65vh" :cycle="false" v-model="picked" :hide-delimiters="true">
               <v-carousel-item v-for="(item,i) in opt" :key="i" @click="choose(item)">
@@ -40,7 +41,11 @@ export default {
       let alpha = " abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
       let num = _.range(0, 10);
       let words = ["YES ", "NO "];
-      return alpha.concat(num).concat(words);
+      let emoji = ["😊", "☹️"];
+      return alpha
+        .concat(num)
+        .concat(words)
+        .concat(emoji);
     }
   },
   methods: {
@@ -53,6 +58,9 @@ export default {
     },
     backspace() {
       this.sentence = this.sentence.slice(0, -1);
+    },
+    clear() {
+      this.sentence = "";
     }
   }
 };
