@@ -11,8 +11,6 @@
   "dependencies": {
     "lodash": "^4.17.4",
     "vue": "^2.5.3",
-    "vue-carousel": "^0.6.5",
-    "vue-swipe": "^2.3.0",
     "vuetify": "^0.17.4"
   },
   "devDependencies": {
